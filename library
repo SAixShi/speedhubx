@@ -165,7 +165,7 @@ Top.Size = UDim2.new(0, 30, 0, 30)
 Top.ZIndex = 3
 Top.Image = "rbxassetid://83503711525380"
 Top.ImageColor3 = Color3.new(1, 1, 1)
-Top.ScaleType = Enum.ScaleType.Fit
+Top.ScaleType = Enum.ScaleType.Crop
 
 Tabs.Name = "Tabs"
 Tabs.Parent = Window
@@ -178,7 +178,7 @@ Title.Name = "Title"
 Title.Parent = Window
 Title.BackgroundColor3 = Color3.new(1, 1, 1)
 Title.BackgroundTransparency = 1
-Title.Position = UDim2.new(0, 30, 0, 3)
+Title.Position = UDim2.new(0, 40, 0.5, 0)
 Title.Size = UDim2.new(0, 200, 0, 20)
 Title.Font = Enum.Font.GothamBold
 Title.Text = "Gamer Time"
