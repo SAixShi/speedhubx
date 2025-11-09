@@ -204,23 +204,25 @@ LiveScreen.Text = "KAGUNE READY\nLVL: 90%\nTARGET LOCK\nCOMMENCE ATTACK"
 LiveScreen.TextXAlignment = Enum.TextXAlignment.Left
 LiveScreen.TextYAlignment = Enum.TextYAlignment.Top
 
-local RunService = game:GetService("RunService")
+if LiveScreen and LiveScreen:IsA("TextLabel") then
+    local RunService = game:GetService("RunService")
 
-local scrollSpeed = 10
-local maxOffset = 60
-local currentOffset = 0
+    local scrollSpeed = 10
+    local maxOffset = 60
+    local currentOffset = 0
 
-local function scrollText(deltaTime)
-    currentOffset = currentOffset + scrollSpeed * deltaTime * 60 
+    local function scrollText(deltaTime)
+        currentOffset = currentOffset + scrollSpeed * deltaTime * 60
 
-    if currentOffset >= maxOffset then
-        currentOffset = 0
+        if currentOffset >= maxOffset then
+            currentOffset = 0
+        end
+        
+        LiveScreen.TextYOffset = currentOffset
     end
-    
-    LiveScreen.TextYOffset = currentOffset
-end
 
-RunService.Stepped:Connect(scrollText)
+    RunService.Stepped:Connect(scrollText)
+end
 
 TabSelection.Name = "TabSelection"
 TabSelection.Parent = Window
