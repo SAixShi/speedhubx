@@ -210,50 +210,28 @@ LiveScreen.AnchorPoint = Vector2.new(1, 0.5)
 LiveScreen.Size = UDim2.new(0, 150, 0, 20)
 LiveScreen.ZIndex = 7
 LiveScreen.Font = Enum.Font.Code
-LiveScreen.TextColor3 = Color3.new(1, 0, 0)
+LiveScreen.TextColor3 = Color3.fromRGB(0, 255, 0)
 LiveScreen.TextSize = 12
-LiveScreen.Text = "BATTLE MODE: OFFLINE" 
-LiveScreen.TextXAlignment = Enum.TextXAlignment.Right
+LiveScreen.Text = "🎁 LOOT STATUS: READY  |  GIFT AVAILABLE  |  CLAIM NOW!  |  SHI PAID  "
+LiveScreen.TextXAlignment = Enum.TextXAlignment.Left
 
 local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Player = Players.LocalPlayer
 
-local function updateCombatStatus()
-    local Character = Player.Character
-    if not Character then return end
-    
-    local Humanoid = Character:FindFirstChild("Humanoid")
-    if not Humanoid then return end
+local scrollSpeed = 1
+local maxOffset = 100
+local currentOffset = 0
 
-    local health = Humanoid.Health
-    local maxHealth = Humanoid.MaxHealth
-    local combatStatus = "OFFLINE"
-    local color = Color3.new(0, 1, 0) -- Green/Safe
+local function scrollText(deltaTime)
+    currentOffset = currentOffset + scrollSpeed * deltaTime * 60
 
-    if health < maxHealth * 0.5 then
-        combatStatus = "RAGE MODE ACTIVE"
-        color = Color3.fromRGB(255, 165, 0)
-    elseif health < maxHealth then
-        combatStatus = "ENGAGED"
-        color = Color3.new(1, 1, 0)
+    if currentOffset >= maxOffset then
+        currentOffset = 0
     end
     
-    LiveScreen.Text = "STATUS: "..combatStatus.." | HP: "..math.floor(health).."/"..maxHealth
-    LiveScreen.TextColor3 = color
+    LiveScreen.TextXOffset = currentOffset
 end
 
-local function characterAdded(character)
-    local humanoid = character:WaitForChild("Humanoid")
-    humanoid.HealthChanged:Connect(updateCombatStatus)
-    updateCombatStatus()
-end
-
--- I-handle ang kasalukuyang character at future characters
-if Player.Character then
-    characterAdded(Player.Character)
-end
-Player.CharacterAdded:Connect(characterAdded)
+RunService.Stepped:Connect(scrollText)
 
 TabSelection.Name = "TabSelection"
 TabSelection.Parent = Window
