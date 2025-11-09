@@ -82,7 +82,6 @@ local Title_4 = Instance.new("TextLabel")
 local Input = Instance.new("TextButton")
 local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
-local LiveScreen = Instance.new("ImageLabel")
 
 imgui.Name = "imgui"
 imgui.Parent = game:GetService("CoreGui") or gethui()
@@ -188,41 +187,6 @@ Title.Text = "Shi PAID"
 Title.TextColor3 = Color3.new(1, 1, 1)
 Title.TextSize = 14
 Title.TextXAlignment = Enum.TextXAlignment.Left
-
-LiveScreen.Name = "LiveScreen"
-LiveScreen.Parent = Window
-LiveScreen.BackgroundColor3 = Color3.new(0, 0, 0)
-LiveScreen.BackgroundTransparency = 1
-LiveScreen.Position = UDim2.new(1, -190, 0, 0)
-LiveScreen.AnchorPoint = Vector2.new(1, 0)
-LiveScreen.Size = UDim2.new(0, 150, 0, 30)
-LiveScreen.ZIndex = 7
-LiveScreen.Font = Enum.Font.Code
-LiveScreen.TextColor3 = Color3.fromRGB(150, 0, 0)
-LiveScreen.TextSize = 12
-LiveScreen.Text = "KAGUNE READY\nLVL: 90%\nTARGET LOCK\nCOMMENCE ATTACK" 
-LiveScreen.TextXAlignment = Enum.TextXAlignment.Left
-LiveScreen.TextYAlignment = Enum.TextYAlignment.Top
-
-if LiveScreen and LiveScreen:IsA("TextLabel") then
-    local RunService = game:GetService("RunService")
-
-    local scrollSpeed = 10
-    local maxOffset = 60
-    local currentOffset = 0
-
-    local function scrollText(deltaTime)
-        currentOffset = currentOffset + scrollSpeed * deltaTime * 60
-
-        if currentOffset >= maxOffset then
-            currentOffset = 0
-        end
-        
-        LiveScreen.TextYOffset = currentOffset
-    end
-
-    RunService.Stepped:Connect(scrollText)
-end
 
 TabSelection.Name = "TabSelection"
 TabSelection.Parent = Window
