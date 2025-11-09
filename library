@@ -159,11 +159,11 @@ Top.Name = "Top"
 Top.Parent = Bar
 Top.BackgroundColor3 = Color3.new(1, 1, 1)
 Top.BackgroundTransparency = 1
-Top.Position = UDim2.new(0, 27, 0.5, 0)
+Top.Position = UDim2.new(0, 30, 0.5, 0)
 Top.AnchorPoint = Vector2.new(0, 0.5)
-Top.Size = UDim2.new(0, 20, 0, 20)
+Top.Size = UDim2.new(0, 30, 0, 30)
 Top.ZIndex = 3
-Top.Image = "rbxassetid://83503711525380"
+Top.Image = "rbxassetid://72789054633825"
 Top.ImageColor3 = Color3.new(1, 1, 1)
 Top.ScaleType = Enum.ScaleType.Fit
 
