@@ -183,7 +183,7 @@ Title.BackgroundTransparency = 1
 Title.Position = UDim2.new(0, 35, 0, 0)
 Title.AnchorPoint = Vector2.new(0, 0)
 Title.Size = UDim2.new(0, 200, 0, 20)
-Title.ZIndex = 6
+Title.ZIndex = 5
 Title.Font = Enum.Font.GothamBold
 Title.Text = "Shi PAID"
 Title.TextColor3 = Color3.new(1, 1, 1)
@@ -203,18 +203,57 @@ KanekiIcon.ImageColor3 = Color3.new(1, 1, 1)
 KanekiIcon.ScaleType = Enum.ScaleType.Fit
 
 LiveScreen.Name = "LiveScreen"
-LiveScreen.Parent = Window
 LiveScreen.BackgroundColor3 = Color3.new(0, 0, 0)
 LiveScreen.BackgroundTransparency = 1
-LiveScreen.Position = UDim2.new(1, -190, 0, 0)
-LiveScreen.AnchorPoint = Vector2.new(1, 0)
+LiveScreen.Position = UDim2.new(1, -190, 0.5, 0)
+LiveScreen.AnchorPoint = Vector2.new(1, 0.5)
 LiveScreen.Size = UDim2.new(0, 150, 0, 20)
-LiveScreen.ZIndex = 6
+LiveScreen.ZIndex = 7
 LiveScreen.Font = Enum.Font.Code
-LiveScreen.TextColor3 = Color3.fromRGB(150, 0, 0)
+LiveScreen.TextColor3 = Color3.new(1, 0, 0)
 LiveScreen.TextSize = 12
-LiveScreen.Text = "KAGUNE: 0 | HUNGER: 100%" 
+LiveScreen.Text = "BATTLE MODE: OFFLINE" 
 LiveScreen.TextXAlignment = Enum.TextXAlignment.Right
+
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local function updateCombatStatus()
+    local Character = Player.Character
+    if not Character then return end
+    
+    local Humanoid = Character:FindFirstChild("Humanoid")
+    if not Humanoid then return end
+
+    local health = Humanoid.Health
+    local maxHealth = Humanoid.MaxHealth
+    local combatStatus = "OFFLINE"
+    local color = Color3.new(0, 1, 0) -- Green/Safe
+
+    if health < maxHealth * 0.5 then
+        combatStatus = "RAGE MODE ACTIVE"
+        color = Color3.fromRGB(255, 165, 0)
+    elseif health < maxHealth then
+        combatStatus = "ENGAGED"
+        color = Color3.new(1, 1, 0)
+    end
+    
+    LiveScreen.Text = "STATUS: "..combatStatus.." | HP: "..math.floor(health).."/"..maxHealth
+    LiveScreen.TextColor3 = color
+end
+
+local function characterAdded(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    humanoid.HealthChanged:Connect(updateCombatStatus)
+    updateCombatStatus()
+end
+
+-- I-handle ang kasalukuyang character at future characters
+if Player.Character then
+    characterAdded(Player.Character)
+end
+Player.CharacterAdded:Connect(characterAdded)
 
 TabSelection.Name = "TabSelection"
 TabSelection.Parent = Window
