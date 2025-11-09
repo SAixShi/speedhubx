@@ -82,8 +82,7 @@ local Title_4 = Instance.new("TextLabel")
 local Input = Instance.new("TextButton")
 local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
-local LiveScreen = Instance.new("TextLabel")
-local KanekiIcon = Instance.new("ImageLabel")
+local LiveScreen = Instance.new("ImageLabel")
 
 imgui.Name = "imgui"
 imgui.Parent = game:GetService("CoreGui") or gethui()
@@ -183,52 +182,42 @@ Title.BackgroundTransparency = 1
 Title.Position = UDim2.new(0, 35, 0, 0)
 Title.AnchorPoint = Vector2.new(0, 0)
 Title.Size = UDim2.new(0, 200, 0, 20)
-Title.ZIndex = 5
+Title.ZIndex = 7
 Title.Font = Enum.Font.GothamBold
 Title.Text = "Shi PAID"
 Title.TextColor3 = Color3.new(1, 1, 1)
 Title.TextSize = 14
 Title.TextXAlignment = Enum.TextXAlignment.Left
 
-KanekiIcon.Name = "KanekiIcon"
-KanekiIcon.Parent = Window
-KanekiIcon.BackgroundColor3 = Color3.new(0, 0, 0)
-KanekiIcon.BackgroundTransparency = 1
-KanekiIcon.Position = UDim2.new(1, -30, 0, 0)
-KanekiIcon.AnchorPoint = Vector2.new(1, 0)
-KanekiIcon.Size = UDim2.new(0, 30, 0, 30)
-KanekiIcon.ZIndex = 6
-KanekiIcon.Image = "rbxassetid://6286762140"
-KanekiIcon.ImageColor3 = Color3.new(1, 1, 1)
-KanekiIcon.ScaleType = Enum.ScaleType.Fit
-
 LiveScreen.Name = "LiveScreen"
+LiveScreen.Parent = Window
 LiveScreen.BackgroundColor3 = Color3.new(0, 0, 0)
 LiveScreen.BackgroundTransparency = 1
-LiveScreen.Position = UDim2.new(1, -190, 0.5, 0)
-LiveScreen.AnchorPoint = Vector2.new(1, 0.5)
-LiveScreen.Size = UDim2.new(0, 150, 0, 20)
+LiveScreen.Position = UDim2.new(1, -190, 0, 0)
+LiveScreen.AnchorPoint = Vector2.new(1, 0)
+LiveScreen.Size = UDim2.new(0, 150, 0, 30)
 LiveScreen.ZIndex = 7
 LiveScreen.Font = Enum.Font.Code
-LiveScreen.TextColor3 = Color3.fromRGB(0, 255, 0)
+LiveScreen.TextColor3 = Color3.fromRGB(150, 0, 0)
 LiveScreen.TextSize = 12
-LiveScreen.Text = "🎁 LOOT STATUS: READY  |  GIFT AVAILABLE  |  CLAIM NOW!  |  SHI PAID  "
+LiveScreen.Text = "KAGUNE READY\nLVL: 90%\nTARGET LOCK\nCOMMENCE ATTACK" 
 LiveScreen.TextXAlignment = Enum.TextXAlignment.Left
+LiveScreen.TextYAlignment = Enum.TextYAlignment.Top
 
 local RunService = game:GetService("RunService")
 
-local scrollSpeed = 1
-local maxOffset = 100
+local scrollSpeed = 10
+local maxOffset = 60
 local currentOffset = 0
 
 local function scrollText(deltaTime)
-    currentOffset = currentOffset + scrollSpeed * deltaTime * 60
+    currentOffset = currentOffset + scrollSpeed * deltaTime * 60 
 
     if currentOffset >= maxOffset then
         currentOffset = 0
     end
     
-    LiveScreen.TextXOffset = currentOffset
+    LiveScreen.TextYOffset = currentOffset
 end
 
 RunService.Stepped:Connect(scrollText)
