@@ -113,10 +113,10 @@ Window.ClipsDescendants = true
 Window.Position = UDim2.new(0.5, 0, 0.5, 0)
 Window.AnchorPoint = Vector2.new(0.5, 0.5)
 Window.Selectable = true
-Window.Size = UDim2.new(0, 450, 0, 300) 
-Window.Image = "rbxassetid://8350371152538" 
-Window.ImageColor3 = Color3.new(1, 1, 1) 
-Window.ScaleType = Enum.ScaleType.Fit
+Window.Size = UDim2.new(0, 450, 0, 300)
+Window.Image = "rbxassetid://2851926732" 
+Window.ImageColor3 = Color3.new(0.0823529, 0.0862745, 0.0901961) 
+Window.ScaleType = Enum.ScaleType.Slice
 
 Resizer.Name = "Resizer"
 Resizer.Parent = Window
@@ -417,7 +417,7 @@ Folder.BackgroundTransparency = 1
 Folder.Position = UDim2.new(0, 0, 0, 50)
 Folder.Size = UDim2.new(1, 0, 0, 20)
 Folder.Image = "rbxassetid://2851929490"
-Folder.ImageColor3 = Color3.new(1, 1, 1) 
+Folder.ImageColor3 = Color3.new(0.0823529, 0.0862745, 0.0901961) 
 Folder.ScaleType = Enum.ScaleType.Slice
 Folder.SliceCenter = Rect.new(4, 4, 4, 4)
 
@@ -744,8 +744,8 @@ TextButton_Roundify_4px_5.SliceCenter = Rect.new(4, 4, 4, 4)
 
 DropdownButton.Name = "DropdownButton"
 DropdownButton.Parent = Prefabs
-DropdownButton.BackgroundColor3 = Color3.new(1, 1, 1) 
-DropdownButton.BackgroundTransparency = 1 
+DropdownButton.BackgroundColor3 = Color3.new(0.129412, 0.133333, 0.141176) 
+DropdownButton.BackgroundTransparency = 0 -- Ibalik sa solid (o 0)
 DropdownButton.BorderSizePixel = 0
 DropdownButton.Size = UDim2.new(1, 0, 0, 20)
 DropdownButton.ZIndex = 3
