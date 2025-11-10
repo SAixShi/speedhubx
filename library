@@ -108,14 +108,14 @@ Window.Name = "Window"
 Window.Parent = Prefabs
 Window.Active = true
 Window.BackgroundColor3 = Color3.new(1, 1, 1)
-Window.BackgroundTransparency = 1
+Window.BackgroundTransparency = 1 
 Window.ClipsDescendants = true
 Window.Position = UDim2.new(0.5, 0, 0.5, 0)
 Window.AnchorPoint = Vector2.new(0.5, 0.5)
 Window.Selectable = true
-Window.Size = UDim2.new(0, 450, 0, 300)
-Window.Image = "rbxassetid://8350371152538"
-Window.ImageColor3 = Color3.new(1, 1, 1)
+Window.Size = UDim2.new(0, 450, 0, 300) 
+Window.Image = "rbxassetid://8350371152538" 
+Window.ImageColor3 = Color3.new(1, 1, 1) 
 Window.ScaleType = Enum.ScaleType.Fit
 
 Resizer.Name = "Resizer"
@@ -167,12 +167,12 @@ Top.Image = "rbxassetid://83503711525380"
 Top.ImageColor3 = Color3.new(1, 1, 1)
 Top.ScaleType = Enum.ScaleType.Crop
 
-Tabs.Name = "Tabs"
-Tabs.Parent = Window
-Tabs.BackgroundColor3 = Color3.new(1, 1, 1)
-Tabs.BackgroundTransparency = 1
-Tabs.Position = UDim2.new(0, 15, 0, 60)
-Tabs.Size = UDim2.new(1, -30, 1, -60)
+Tab.Name = "Tab"
+Tab.Parent = Prefabs
+Tab.BackgroundColor3 = Color3.new(1, 1, 1)
+Tab.BackgroundTransparency = 1 
+Tab.Size = UDim2.new(1, 0, 1, 0)
+Tab.Visible = false
 
 Title.Name = "Title"
 Title.Parent = Window
@@ -412,7 +412,7 @@ TextButton_Roundify_4px_2.SliceCenter = Rect.new(4, 4, 4, 4)
 
 Folder.Name = "Folder"
 Folder.Parent = Prefabs
-Folder.BackgroundColor3 = Color3.new(1, 1, 1) 
+Folder.BackgroundColor3 = Color3.new(1, 1, 1)
 Folder.BackgroundTransparency = 1
 Folder.Position = UDim2.new(0, 0, 0, 50)
 Folder.Size = UDim2.new(1, 0, 0, 20)
