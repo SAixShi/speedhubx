@@ -221,7 +221,7 @@ Frame.Size = UDim2.new(1, 0, 0, 2)
 Tab.Name = "Tab"
 Tab.Parent = Prefabs
 Tab.BackgroundColor3 = Color3.new(1, 1, 1)
-Tab.BackgroundTransparency = 1
+Tab.BackgroundTransparency = 1 
 Tab.Size = UDim2.new(1, 0, 1, 0)
 Tab.Visible = false
 
@@ -412,12 +412,12 @@ TextButton_Roundify_4px_2.SliceCenter = Rect.new(4, 4, 4, 4)
 
 Folder.Name = "Folder"
 Folder.Parent = Prefabs
-Folder.BackgroundColor3 = Color3.new(1, 1, 1)
+Folder.BackgroundColor3 = Color3.new(1, 1, 1) 
 Folder.BackgroundTransparency = 1
 Folder.Position = UDim2.new(0, 0, 0, 50)
 Folder.Size = UDim2.new(1, 0, 0, 20)
 Folder.Image = "rbxassetid://2851929490"
-Folder.ImageColor3 = Color3.new(0.0823529, 0.0862745, 0.0901961)
+Folder.ImageColor3 = Color3.new(1, 1, 1) 
 Folder.ScaleType = Enum.ScaleType.Slice
 Folder.SliceCenter = Rect.new(4, 4, 4, 4)
 
@@ -744,7 +744,8 @@ TextButton_Roundify_4px_5.SliceCenter = Rect.new(4, 4, 4, 4)
 
 DropdownButton.Name = "DropdownButton"
 DropdownButton.Parent = Prefabs
-DropdownButton.BackgroundColor3 = Color3.new(0.129412, 0.133333, 0.141176)
+DropdownButton.BackgroundColor3 = Color3.new(1, 1, 1) 
+DropdownButton.BackgroundTransparency = 1 
 DropdownButton.BorderSizePixel = 0
 DropdownButton.Size = UDim2.new(1, 0, 0, 20)
 DropdownButton.ZIndex = 3
