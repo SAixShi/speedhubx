@@ -273,7 +273,7 @@ Title_2.ZIndex = 2
 Title_2.Font = Enum.Font.GothamBold
 Title_2.Text = "Slider"
 Title_2.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
-Title_2.TextSize = 12
+Title_2.TextSize = 11
 
 Indicator.Name = "Indicator"
 Indicator.Parent = Slider
@@ -426,7 +426,7 @@ Button.Parent = Folder
 Button.BackgroundColor3 = Color3.new(0.160784, 0.290196, 0.478431)
 Button.BackgroundTransparency = 1
 Button.BorderSizePixel = 0
-Button.Size = UDim2.new(1, 0, 0, 20)
+Button.Size = UDim2.new(0, 91, 0, 16)
 Button.ZIndex = 2
 Button.Font = Enum.Font.GothamSemibold
 Button.Text = "      Folder"
@@ -448,8 +448,8 @@ Toggle_2.Name = "Toggle"
 Toggle_2.Parent = Button
 Toggle_2.BackgroundColor3 = Color3.new(1, 1, 1)
 Toggle_2.BackgroundTransparency = 1
-Toggle_2.Position = UDim2.new(0, 5, 0, 0)
-Toggle_2.Size = UDim2.new(0, 20, 0, 20)
+Toggle_2.Position = UDim2.new(0, 2, 0, 1)
+Toggle_2.Size = UDim2.new(0, 16, 0, 16)
 Toggle_2.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=4731371541"
 
 Objects_2.Name = "Objects"
